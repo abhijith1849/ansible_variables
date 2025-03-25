@@ -1,0 +1,7 @@
+- name: fact variable
+  hosts: tar2
+  tasks:
+  - name: fact variable
+    debug:
+      msg:
+        "{{ansible_kernel}}"

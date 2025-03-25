@@ -1,0 +1,7 @@
+- name: explicit
+  hosts: tar2
+  tasks:
+  - name: explicit by calling debug
+    debug:
+      msg: hiji
+  - gather_facts:

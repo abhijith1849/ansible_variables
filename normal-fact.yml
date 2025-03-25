@@ -1,0 +1,7 @@
+- name: normal
+  hosts: tar2
+  tasks:
+  - name: normal
+    debug:
+      msg: hey youuu
+

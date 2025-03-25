@@ -1,0 +1,6 @@
+- name: implicit
+  hosts: tar2
+  gather_facts: no
+  tasks:
+  - debug:
+      msg: heyy

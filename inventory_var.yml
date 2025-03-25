@@ -1,0 +1,10 @@
+- name: print inventory variable
+  hosts: tar2
+  gather_facts: no
+  vars:
+    a: apple
+  tasks:
+  - name: calling variable by debug module
+    debug:
+      msg:
+        "{{a}}"

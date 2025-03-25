@@ -1,0 +1,25 @@
+all:
+  hosts:
+    tar1:
+      ansible_user: abhi
+      ansible_host: 172.16.21.1
+      ansible_become: yes
+      ansible_become_method: sudo
+      ansible_become_pass: asd123.
+    tar2:
+      ansible_user: abhi
+      ansible_host: 172.16.21.3
+      ansible_become: yes
+      ansible_become_method: sudo
+      ansible_become_pass: asd123.
+  children:
+    grp1:
+      hosts:
+        tar1:
+    grp2:
+      hosts:
+        tar2:
+    grp3:
+      children:
+        grp1:
+        grp2:
