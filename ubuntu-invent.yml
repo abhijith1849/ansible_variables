@@ -1,0 +1,19 @@
+- name: Install and add content to httpd using variables in ubuntu
+  hosts: tar2
+  vars:
+    name: httpd
+    state: present
+  tasks:
+  - name:
+    package:
+      name: "{{name}}"
+      state: "{{state}}"
+  - name: enable & start
+    service:
+      name: "{{name}}"
+      enabled: yes
+      state: started
+  - name: add content
+    copy:
+      dest: "{{destination}}"
+      content: "{{content}}"      

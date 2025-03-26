@@ -1,0 +1,19 @@
+- name: Install and add content to httpd using variables
+  hosts: tar2
+  vars:
+    name: httpd
+    state: present
+  tasks:
+  - name:
+    package:
+      name: "{{package}}"
+      state: "{{state}}"
+  - name: enable & start
+    service:
+      name: httpd
+      enabled: yes
+      state: started
+  - name: add content
+    copy:
+      dest: "{{destination}}"
+      content: "{{content}}"
